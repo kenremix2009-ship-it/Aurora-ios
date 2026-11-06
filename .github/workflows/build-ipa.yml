@@ -16,20 +16,19 @@ jobs:
     - name: Select Xcode Version
       run: sudo xcode-select -s /Applications/Xcode.app
 
-    - name: Find Project and Scheme
-      run: |
-        echo "Searching for project/workspace..."
-        find . -maxdepth 3 -name "*.xcworkspace" -o -name "*.xcodeproj"
-        
-        # Tự động chọn xcworkspace hoặc xcodeproj đầu tiên tìm thấy
-        TARGET_FILE=$(find . -maxdepth 3 -name "*.xcworkspace" -o -name "*.xcodeproj" | head -n 1)
-        echo "Selected target: $TARGET_FILE"
-        
-        echo "TARGET_FILE=$TARGET_FILE" >> $GITHUB_ENV
-
     - name: Build Unsigned Archive
       run: |
-        TARGET="${{ env.TARGET_FILE }}"
+        echo "=== DANH SACH FILE TRONG THU MUC ==="
+        ls -la
+        
+        # Tìm trực tiếp file .xcodeproj hoặc .xcworkspace ngay trong thư mục
+        TARGET=$(find . -maxdepth 3 -name "*.xcworkspace" -o -name "*.xcodeproj" | head -n 1)
+        echo "Da tim thay target: $TARGET"
+        
+        if [ -z "$TARGET" ]; then
+          echo "LỖI: Không tìm thấy file project nào!"
+          exit 1
+        fi
         
         if [[ "$TARGET" == *.xcworkspace ]]; then
           FLAG="-workspace"
@@ -39,7 +38,7 @@ jobs:
           SCHEME=$(basename "$TARGET" .xcodeproj)
         fi
         
-        echo "Using flag: $FLAG, target: $TARGET, scheme: $SCHEME"
+        echo "Su dung Flag: $FLAG | Target: $TARGET | Scheme: $SCHEME"
 
         xcodebuild clean archive \
           $FLAG "$TARGET" \
