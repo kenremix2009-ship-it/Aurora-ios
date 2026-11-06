@@ -16,19 +16,33 @@ jobs:
     - name: Select Xcode Version
       run: sudo xcode-select -s /Applications/Xcode.app
 
-    - name: List files for debugging
-      run: ls -la && find . -name "*.xcodeproj"
+    - name: Find Project and Scheme
+      run: |
+        echo "Searching for project/workspace..."
+        find . -maxdepth 3 -name "*.xcworkspace" -o -name "*.xcodeproj"
+        
+        # Tự động chọn xcworkspace hoặc xcodeproj đầu tiên tìm thấy
+        TARGET_FILE=$(find . -maxdepth 3 -name "*.xcworkspace" -o -name "*.xcodeproj" | head -n 1)
+        echo "Selected target: $TARGET_FILE"
+        
+        echo "TARGET_FILE=$TARGET_FILE" >> $GITHUB_ENV
 
     - name: Build Unsigned Archive
       run: |
-        PROJECT=$(find . -name "*.xcodeproj" | head -n 1)
-        echo "Using project: $PROJECT"
+        TARGET="${{ env.TARGET_FILE }}"
         
-        SCHEME=$(basename "$PROJECT" .xcodeproj)
-        echo "Using scheme: $SCHEME"
+        if [[ "$TARGET" == *.xcworkspace ]]; then
+          FLAG="-workspace"
+          SCHEME=$(basename "$TARGET" .xcworkspace)
+        else
+          FLAG="-project"
+          SCHEME=$(basename "$TARGET" .xcodeproj)
+        fi
+        
+        echo "Using flag: $FLAG, target: $TARGET, scheme: $SCHEME"
 
         xcodebuild clean archive \
-          -project "$PROJECT" \
+          $FLAG "$TARGET" \
           -scheme "$SCHEME" \
           -configuration Release \
           -sdk iphoneos \
