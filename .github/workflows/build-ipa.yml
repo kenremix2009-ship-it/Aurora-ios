@@ -7,21 +7,23 @@ on:
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: macos-14
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Resolve Swift Packages
-      run: |
-        xcodebuild -resolvePackageDependencies -workspace Aurora.xcworkspace -scheme Aurora || true
+    - name: Select Xcode Version
+      run: sudo xcode-select -s /Applications/Xcode.app
 
     - name: Build Unsigned Archive
       run: |
+        WORKSPACE=$(find . -maxdepth 2 -name "*.xcworkspace" | head -n 1)
+        SCHEME=$(xcodebuild -workspace "$WORKSPACE" -list | awk '/Schemes:/{flag=1;next} flag && NF {print $1; exit}')
+        
         xcodebuild clean archive \
-          -workspace Aurora.xcworkspace \
-          -scheme Aurora \
+          -workspace "$WORKSPACE" \
+          -scheme "$SCHEME" \
           -configuration Release \
           -sdk iphoneos \
           -archivePath $RUNNER_TEMP/app.xcarchive \
