@@ -18,15 +18,15 @@ jobs:
 
     - name: Build Unsigned Archive
       run: |
-        echo "=== DANH SACH FILE TRONG THU MUC ==="
+        echo "=== DANH SACH FILE TRONG THU MUC GOC ==="
         ls -la
         
-        # Tìm trực tiếp file .xcodeproj hoặc .xcworkspace ngay trong thư mục
-        TARGET=$(find . -maxdepth 3 -name "*.xcworkspace" -o -name "*.xcodeproj" | head -n 1)
+        # Tìm file .xcworkspace hoặc .xcodeproj ở bất kỳ thư mục con nào
+        TARGET=$(find . -name "*.xcworkspace" -o -name "*.xcodeproj" | head -n 1)
         echo "Da tim thay target: $TARGET"
         
         if [ -z "$TARGET" ]; then
-          echo "LỖI: Không tìm thấy file project nào!"
+          echo "LỖI: Vẫn không tìm thấy file project!"
           exit 1
         fi
         
