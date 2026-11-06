@@ -17,19 +17,18 @@ jobs:
       run: sudo xcode-select -s /Applications/Xcode.app
 
     - name: List files for debugging
-      run: ls -la && find . -name "*.xcworkspace"
+      run: ls -la && find . -name "*.xcodeproj"
 
     - name: Build Unsigned Archive
       run: |
-        # Tự động tìm đường dẫn tuyệt đối đến file xcworkspace bất kỳ trong thư mục
-        WORKSPACE=$(find . -name "*.xcworkspace" | head -n 1)
-        echo "Using workspace: $WORKSPACE"
+        PROJECT=$(find . -name "*.xcodeproj" | head -n 1)
+        echo "Using project: $PROJECT"
         
-        SCHEME=$(xcodebuild -workspace "$WORKSPACE" -list | awk '/Schemes:/{flag=1;next} flag && NF {print $1; exit}')
+        SCHEME=$(basename "$PROJECT" .xcodeproj)
         echo "Using scheme: $SCHEME"
 
         xcodebuild clean archive \
-          -workspace "$WORKSPACE" \
+          -project "$PROJECT" \
           -scheme "$SCHEME" \
           -configuration Release \
           -sdk iphoneos \
