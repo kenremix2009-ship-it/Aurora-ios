@@ -16,17 +16,22 @@ jobs:
     - name: Select Xcode Version
       run: sudo xcode-select -s /Applications/Xcode.app
 
-    - name: Build Unsigned Archive
+    - name: Generate Project with Tuist and Build Archive
       run: |
-        echo "=== DANH SACH FILE TRONG THU MUC GOC ==="
-        ls -la
-        
-        # Tìm file .xcworkspace hoặc .xcodeproj ở bất kỳ thư mục con nào
+        echo "=== Kiem tra va Generate project bang Tuist ==="
+        if command -v tuist &> /dev/null; then
+          tuist generate --no-open
+        else
+          curl -Ls https://install.tuist.io | bash
+          tuist generate --no-open
+        fi
+
+        # Tìm file project sau khi Tuist generate
         TARGET=$(find . -name "*.xcworkspace" -o -name "*.xcodeproj" | head -n 1)
         echo "Da tim thay target: $TARGET"
         
         if [ -z "$TARGET" ]; then
-          echo "LỖI: Vẫn không tìm thấy file project!"
+          echo "LOI: Van khong tim thay file project sau khi generate!"
           exit 1
         fi
         
