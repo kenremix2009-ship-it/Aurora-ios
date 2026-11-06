@@ -1,0 +1,29 @@
+/* Button: Cancel */
+"button-cancel" = "Atšaukti";
+
+/* Button: OK */
+"button-ok" = "Gerai";
+
+/* Button: View */
+"button-view" = "Peržiūrėti";
+
+/* Button: Menu */
+"button-menu" = "Meniu";
+
+/* Button: Copy Link */
+"button-copy-link" = "Kopijuoti nuorodos adresą";
+
+/* Button: Open External */
+"button-open-external" = "Atidaryti nuorodą išorinėje naršyklėje";
+
+/* Button: Share External */
+"button-share-link" = "Bendrinti nuorodą";
+
+/* Button: Done */
+"button-done" = "Atlikta";
+
+/* Button: Back */
+"button-back" = "Atgal";
+
+/* Button: Forward */
+"button-forward" = "Pirmyn";

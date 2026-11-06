@@ -1,0 +1,29 @@
+/* Button: Cancel */
+"button-cancel" = "取消";
+
+/* Button: OK */
+"button-ok" = "好";
+
+/* Button: View */
+"button-view" = "查看";
+
+/* Button: Menu */
+"button-menu" = "菜单";
+
+/* Button: Copy Link */
+"button-copy-link" = "拷贝链接地址";
+
+/* Button: Open External */
+"button-open-external" = "用外部浏览器打开链接";
+
+/* Button: Share External */
+"button-share-link" = "共享链接";
+
+/* Button: Done */
+"button-done" = "完成";
+
+/* Button: Back */
+"button-back" = "返回";
+
+/* Button: Forward */
+"button-forward" = "前进";

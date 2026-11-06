@@ -1,0 +1,29 @@
+/* iOS Button: Cancel */
+"button-cancel" = "Zrušit";
+
+/* Button: Done */
+"button-done" = "Hotovo";
+
+/* iOS Button: OK */
+"button-ok" = "OK";
+
+/* iOS Button: View */
+"button-view" = "Zobrazit";
+
+/* iOS Button: Menu */
+"button-menu" = "Menu";
+
+/* Button: Copy Link */
+"button-copy-link" = "Kopírovat adresu odkazu";
+
+/* Button: Open External */
+"button-open-external" = "Otevřít odkaz v externím prohlížeči";
+
+/* Button: Share External */
+"button-share-link" = "Sdílet odkaz";
+
+/* Button: Back */
+"button-back" = "Zpět";
+
+/* Button: Forward */
+"button-forward" = "Vpřed";

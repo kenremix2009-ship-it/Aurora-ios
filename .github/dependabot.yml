@@ -1,0 +1,22 @@
+version: 2
+
+registries:
+  median-spm:
+    type: swift-package-registry
+    url: https://packages.median.co
+    token: ${{secrets.MEDIAN_SPM_TOKEN}}
+
+updates:
+  - package-ecosystem: swift
+    directory: /
+    registries:
+      - median-spm
+    schedule:
+      interval: weekly
+      day: sunday
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: sunday

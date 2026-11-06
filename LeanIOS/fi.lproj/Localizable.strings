@@ -1,0 +1,29 @@
+/* iOS Button: Cancel */
+"button-cancel" = "Peruuta";
+
+/* iOS Button: OK */
+"button-ok" = "OK";
+
+/* iOS Button: View */
+"button-view" = "Näytä";
+
+/* iOS Button: Menu */
+"button-menu" = "Valikko";
+
+/* Button: Done */
+"button-done" = "Valmis";
+
+/* Button: Copy Link */
+"button-copy-link" = "Kopioi linkin osoite";
+
+/* Button: Open External */
+"button-open-external" = "Avaa linkki ulkoisessa selaimessa";
+
+/* Button: Share External */
+"button-share-link" = "Jaa linkki";
+
+/* Button: Back */
+"button-back" = "Takaisin";
+
+/* Button: Forward */
+"button-forward" = "Eteenpäin";

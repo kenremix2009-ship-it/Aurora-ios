@@ -1,0 +1,29 @@
+/* iOS Button: Cancel */
+"button-cancel" = "Sguir dheth";
+
+/* iOS Button: OK */
+"button-ok" = "Ceart ma-thà";
+
+/* iOS Button: View */
+"button-view" = "Seall";
+
+/* iOS Button: Menu */
+"button-menu" = "Clàr-taice";
+
+/* Button: Done */
+"button-done" = "Deiseil";
+
+/* Button: Copy Link */
+"button-copy-link" = "Dèan lethbhreac de sheòladh a' cheangail";
+
+/* Button: Open External */
+"button-open-external" = "Fosgail an ceangal ann am brabhsair eile";
+
+/* Button: Share External */
+"button-share-link" = "Co-roinn an ceangal";
+
+/* Button: Back */
+"button-back" = "Air ais";
+
+/* Button: Forward */
+"button-forward" = "Air adhart";

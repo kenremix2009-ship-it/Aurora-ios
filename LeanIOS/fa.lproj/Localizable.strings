@@ -1,0 +1,29 @@
+/* Button: Cancel */
+"button-cancel" = "لغو";
+
+/* Button: OK */
+"button-ok" = "تأیید";
+
+/* Button: View */
+"button-view" = "مشاهده";
+
+/* Button: Menu */
+"button-menu" = "منو";
+
+/* Button: Copy Link */
+"button-copy-link" = "کپی آدرس لینک";
+
+/* Button: Open External */
+"button-open-external" = "باز کردن لینک در مرورگر خارجی";
+
+/* Button: Share External */
+"button-share-link" = "اشتراک‌گذاری لینک";
+
+/* Button: Done */
+"button-done" = "تمام";
+
+/* Button: Back */
+"button-back" = "بازگشت";
+
+/* Button: Forward */
+"button-forward" = "جلو";

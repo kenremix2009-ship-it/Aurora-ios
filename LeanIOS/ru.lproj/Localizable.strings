@@ -1,0 +1,29 @@
+/* Button: Cancel */
+"button-cancel" = "Отменить";
+
+/* Button: OK */
+"button-ok" = "ОК";
+
+/* Button: View */
+"button-view" = "Просмотреть";
+
+/* Button: Menu */
+"button-menu" = "Меню";
+
+/* Button: Done */
+"button-done" = "Готово";
+
+/* Button: Copy Link */
+"button-copy-link" = "Скопировать адрес ссылки";
+
+/* Button: Open External */
+"button-open-external" = "Открыть ссылку во внешнем браузере";
+
+/* Button: Share External */
+"button-share-link" = "Поделиться ссылкой";
+
+/* Button: Back */
+"button-back" = "Назад";
+
+/* Button: Forward */
+"button-forward" = "Вперед";

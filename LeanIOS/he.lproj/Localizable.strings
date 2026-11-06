@@ -1,0 +1,29 @@
+/* Button: Cancel */
+"button-cancel" = "ביטול";
+
+/* Button: OK */
+"button-ok" = "אישור";
+
+/* Button: View */
+"button-view" = "הצג";
+
+/* Button: Menu */
+"button-menu" = "תפריט";
+
+/* Button: Done */
+"button-done" = "סיום";
+
+/* Button: Copy Link */
+"button-copy-link" = "העתק כתובת קישור";
+
+/* Button: Open External */
+"button-open-external" = "פתח קישור בדפדפן חיצוני";
+
+/* Button: Share External */
+"button-share-link" = "שתף קישור";
+
+/* Button: Back */
+"button-back" = "חזרה";
+
+/* Button: Forward */
+"button-forward" = "קדימה";

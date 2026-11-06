@@ -1,0 +1,29 @@
+/* iOS Button: Cancel */
+"button-cancel" = "İptal";
+
+/* iOS Button: OK */
+"button-ok" = "Tamam";
+
+/* iOS Button: View */
+"button-view" = "Görüntüle";
+
+/* iOS Button: Menu */
+"button-menu" = "Menü";
+
+/* Button: Copy Link */
+"button-copy-link" = "Bağlantı adresini kopyala";
+
+/* Button: Open External */
+"button-open-external" = "Bağlantıyı harici tarayıcıda aç";
+
+/* Button: Share External */
+"button-share-link" = "Bağlantıyı paylaş";
+
+/* Button: Done */
+"button-done" = "Bitti";
+
+/* Button: Back */
+"button-back" = "Geri";
+
+/* Button: Forward */
+"button-forward" = "İleri";

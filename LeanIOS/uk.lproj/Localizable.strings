@@ -1,0 +1,29 @@
+/* Button: Cancel */
+"button-cancel" = "Скасувати";
+
+/* Button: OK */
+"button-ok" = "Гаразд";
+
+/* Button: View */
+"button-view" = "Переглянути";
+
+/* Button: Menu */
+"button-menu" = "Меню";
+
+/* Button: Copy Link */
+"button-copy-link" = "Скопіювати посилання";
+
+/* Button: Open External */
+"button-open-external" = "Відкрити в зовнішньому браузері";
+
+/* Button: Share External */
+"button-share-link" = "Поділитися посиланням";
+
+/* Button: Done */
+"button-done" = "Готово";
+
+/* Button: Back */
+"button-back" = "Назад";
+
+/* Button: Forward */
+"button-forward" = "Вперед";

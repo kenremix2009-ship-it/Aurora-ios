@@ -1,0 +1,31 @@
+{
+  "originHash" : "6b71b6db364f9f357c1b2a6e25d871945ec4b548641527795754bf03fd48854f",
+  "pins" : [
+    {
+      "identity" : "median.median-core",
+      "kind" : "registry",
+      "location" : "",
+      "state" : {
+        "version" : "4.0.1"
+      }
+    },
+    {
+      "identity" : "median.median-icons",
+      "kind" : "registry",
+      "location" : "",
+      "state" : {
+        "version" : "1.2.0"
+      }
+    },
+    {
+      "identity" : "ziparchive",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ZipArchive/ZipArchive",
+      "state" : {
+        "revision" : "df35718ea19a94e015b91dc4881dee028ce4cdba",
+        "version" : "2.6.0"
+      }
+    }
+  ],
+  "version" : 3
+}

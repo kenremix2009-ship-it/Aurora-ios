@@ -1,0 +1,29 @@
+/* iOS Button: Cancel */
+"button-cancel" = "Annulla";
+
+/* iOS Button: OK */
+"button-ok" = "OK";
+
+/* iOS Button: View */
+"button-view" = "Visualizza";
+
+/* iOS Button: Menu */
+"button-menu" = "Menu";
+
+/* Button: Done */
+"button-done" = "Fine";
+
+/* Button: Copy Link */
+"button-copy-link" = "Copia indirizzo link";
+
+/* Button: Open External */
+"button-open-external" = "Apri link nel browser esterno";
+
+/* Button: Share External */
+"button-share-link" = "Condividi link";
+
+/* Button: Back */
+"button-back" = "Indietro";
+
+/* Button: Forward */
+"button-forward" = "Avanti";

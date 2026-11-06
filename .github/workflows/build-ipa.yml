@@ -1,0 +1,43 @@
+name: Build Unsigned IPA for ESign
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Resolve Swift Packages
+      run: |
+        xcodebuild -resolvePackageDependencies -workspace Aurora.xcworkspace -scheme Aurora || true
+
+    - name: Build Unsigned Archive
+      run: |
+        xcodebuild clean archive \
+          -workspace Aurora.xcworkspace \
+          -scheme Aurora \
+          -configuration Release \
+          -sdk iphoneos \
+          -archivePath $RUNNER_TEMP/app.xcarchive \
+          CODE_SIGNING_ALLOWED=NO \
+          CODE_SIGNING_REQUIRED=NO \
+          CODE_SIGN_IDENTITY="" \
+          AD_HOC_CODE_SIGNING_ALLOWED=YES
+
+    - name: Package IPA
+      run: |
+        mkdir -p Payload
+        cp -r $RUNNER_TEMP/app.xcarchive/Products/Applications/*.app Payload/
+        zip -r Aurora_Unsigned.ipa Payload
+
+    - name: Upload IPA Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: Aurora-Unsigned-IPA
+        path: Aurora_Unsigned.ipa
