@@ -18,9 +18,15 @@ jobs:
 
     - name: Build Unsigned Archive
       run: |
+        WORKSPACE=$(find . -maxdepth 2 -name "*.xcworkspace" | head -n 1)
+        echo "Found workspace: $WORKSPACE"
+        
+        SCHEME=$(xcodebuild -workspace "$WORKSPACE" -list | awk '/Schemes:/{flag=1;next} flag && NF {print $1; exit}')
+        echo "Found scheme: $SCHEME"
+
         xcodebuild clean archive \
-          -workspace Aurora.xcworkspace \
-          -scheme Aurora \
+          -workspace "$WORKSPACE" \
+          -scheme "$SCHEME" \
           -configuration Release \
           -sdk iphoneos \
           -archivePath $RUNNER_TEMP/app.xcarchive \
