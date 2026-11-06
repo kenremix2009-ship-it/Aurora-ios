@@ -16,22 +16,25 @@ jobs:
     - name: Select Xcode Version
       run: sudo xcode-select -s /Applications/Xcode.app
 
-    - name: Generate Project with Tuist and Build Archive
+    - name: Build with Tuist / Xcode
       run: |
-        echo "=== Kiem tra va Generate project bang Tuist ==="
+        echo "=== Kiem tra cac goi phu thuoc ==/===="
+        
+        # Cài đặt tuist qua Homebrew để tránh bị chặn Cloudflare
+        brew install tuist || true
+        
         if command -v tuist &> /dev/null; then
           tuist generate --no-open
         else
-          curl -Ls https://install.tuist.io | bash
-          tuist generate --no-open
+          echo "Su dung swift package hoac build truc tiep..."
         fi
 
-        # Tìm file project sau khi Tuist generate
+        # Tìm file project hoặc workspace
         TARGET=$(find . -name "*.xcworkspace" -o -name "*.xcodeproj" | head -n 1)
         echo "Da tim thay target: $TARGET"
         
         if [ -z "$TARGET" ]; then
-          echo "LOI: Van khong tim thay file project sau khi generate!"
+          echo "LOI: Khong tim thay file project!"
           exit 1
         fi
         
